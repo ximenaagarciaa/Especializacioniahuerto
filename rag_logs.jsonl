@@ -1,2 +1,9 @@
 {"ts": "2026-11-23T18:22:48", "level": "INFO", "msg": "inicio_cadena", "trace_id": "trace-5ddc1b52", "root_run_id": "01a20a4a-4354-74e0-8cb6-e71d20fe16b8"}
 {"ts": "2026-11-23T18:22:48", "level": "INFO", "msg": "retriever_start", "trace_id": "trace-5ddc1b52", "run_id": "01a20a4a-4357-74b5-9da3-315844d2f334", "parent_run_id": "01a20a4a-4357-74b5-9da3-3157ed4a5172", "query_len": 38, "query_hash": "0db91c875bcf", "meta_trace": "trace-5ddc1b52"}
+{"ts": "2026-11-23T18:33:44", "level": "INFO", "msg": "inicio_cadena", "trace_id": "trace-c9964a95", "root_run_id": "01a20a54-4693-76df-9e02-3f07db99b44d"}
+{"ts": "2026-11-23T18:33:44", "level": "INFO", "msg": "retriever_start", "trace_id": "trace-c9964a95", "run_id": "01a20a54-4695-71f8-ae82-382e494e4660", "parent_run_id": "01a20a54-4695-71f8-ae82-382dbf23edbe", "query_len": 38, "query_hash": "0db91c875bcf", "meta_trace": "trace-c9964a95"}
+{"ts": "2026-11-23T19:26:04", "level": "INFO", "msg": "inicio_cadena", "trace_id": "trace-593aa36d", "root_run_id": "01a20a84-2dcd-71fb-acce-4c1895966aba"}
+{"ts": "2026-11-23T19:26:04", "level": "INFO", "msg": "retriever_start", "trace_id": "trace-593aa36d", "run_id": "01a20a84-2dcf-732c-ae32-357381acb0a0", "parent_run_id": "01a20a84-2dcf-732c-ae32-3572b4470a43", "query_len": 38, "query_hash": "0db91c875bcf", "meta_trace": "trace-593aa36d"}
+{"ts": "2026-11-23T19:26:04", "level": "INFO", "msg": "retriever_end", "trace_id": "trace-593aa36d", "n_documents": 3, "huellas_docs": ["e5c32668ac9f", "8fa03078f9ca", "803705af1219"]}
+{"ts": "2026-11-23T19:26:04", "level": "INFO", "msg": "llm_start", "trace_id": "trace-593aa36d", "run_id": "01a20a84-3010-7448-a648-882d0459204f", "parent_run_id": "01a20a84-2dcd-71fb-acce-4c1895966aba", "n_prompts": 1}
+{"ts": "2026-11-23T19:26:09", "level": "INFO", "msg": "llm_end", "trace_id": "trace-593aa36d", "chars_respuesta": 226, "respuesta_hash": "b3b33bb9a153"}
