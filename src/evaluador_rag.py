@@ -38,7 +38,7 @@ def f1_score(precision: float, recall: float | None) -> float:
     
     return 2 * precision * recall / (precision + recall)
 
-def evaluar_recuperacion(retriever, casos: list[dict], k: int = 3):
+def evaluar_recuperacion(retriever, casos: list[dict], k: int = 5):
     """
     Correr cada caso del conjunto de evaluaciones contra el retriever real de Chroma
     y va a calcular precisión, recall y F1
@@ -82,7 +82,7 @@ def guardar_reporte(ruta_archivo: str, resultados: list[dict], k: int, chunk_siz
 if __name__ == "__main__":
     CARPETA_DB = "vectorstore_huerto"
 
-    K = 3
+    K = 5
     vs = cargar_vectorstore(CARPETA_DB)
 
    # pregunta = "Cuáles son los errores de credenciales inválidas?"
@@ -157,10 +157,10 @@ if __name__ == "__main__":
                 }
     ]
 
-    resultados = evaluar_recuperacion(retriever, casos_evaluacion, 3)
+    resultados = evaluar_recuperacion(retriever, casos_evaluacion, 5)
     print(resultados)
 
-    guardar_reporte("resultados_evaluacion_rag.txt", resultados, 3)
+    guardar_reporte("resultados_evaluacion_rag.txt", resultados, 5)
 
     """
     Precisión: Fórmula: Verdaderos Positivos / (Verdaderos Positivos + Falsos Positivos) 

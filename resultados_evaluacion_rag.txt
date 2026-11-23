@@ -1,9 +1,9 @@
 Fecha: 2026-11-21
-Configuracion: k=3, chunk_size=200, chunk_overlap=30
+Configuracion: k=5, chunk_size=200, chunk_overlap=30
 
 P=0.00 | R=0.00 | F1=0.00 | ¿Como hacer siembra directa de tomates?
 P=0.00 | R=0.00 | F1=0.00 | ¿Variedades de zapallo italiano y sus colores?
-P=0.67 | R=1.00 | F1=0.80 | ¿Como afectan los gusanos cortadores?
-P=0.33 | R=0.50 | F1=0.40 | ¿Que tan cerca pueden estar plantados los zapallos?
-P=0.33 | R=1.00 | F1=0.50 | ¿que es el zapallo italiano?
-P=0.33 | R=1.00 | F1=0.50 | ¿Que distancia de surco?
+P=0.40 | R=1.00 | F1=0.57 | ¿Como afectan los gusanos cortadores?
+P=0.40 | R=1.00 | F1=0.57 | ¿Que tan cerca pueden estar plantados los zapallos?
+P=0.20 | R=1.00 | F1=0.33 | ¿que es el zapallo italiano?
+P=0.20 | R=1.00 | F1=0.33 | ¿Que distancia de surco?

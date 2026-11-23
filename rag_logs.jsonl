@@ -1,0 +1,2 @@
+{"ts": "2026-11-23T18:22:48", "level": "INFO", "msg": "inicio_cadena", "trace_id": "trace-5ddc1b52", "root_run_id": "01a20a4a-4354-74e0-8cb6-e71d20fe16b8"}
+{"ts": "2026-11-23T18:22:48", "level": "INFO", "msg": "retriever_start", "trace_id": "trace-5ddc1b52", "run_id": "01a20a4a-4357-74b5-9da3-315844d2f334", "parent_run_id": "01a20a4a-4357-74b5-9da3-3157ed4a5172", "query_len": 38, "query_hash": "0db91c875bcf", "meta_trace": "trace-5ddc1b52"}
