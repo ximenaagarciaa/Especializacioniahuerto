@@ -10,7 +10,7 @@
 3. Instala las dependencias del proyecto usando el comando 
 pip install -r requirements.txt para poder usarlas en la aplicacion.
 4. Copia `.env.example` a un archivo nuevo llamado `.env`, y completa ahí tus credenciales reales (llaves de API, tokens). El archivo `.env` nunca se sube al repositorio: ya está excluido en `.gitignore`.
-5. Para comprobar que este bien la instalación , ejecuta python  src/consumir_gemini_ref.py
+5. Para comprobar que este bien la instalación , ejecuta python  src/consumir_gemini.py
 
 
 ## Estructura de carpetas
