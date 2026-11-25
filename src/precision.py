@@ -1,5 +1,5 @@
 from collections import Counter
-from .pipeline_limpieza import procesar_texto
+from pipeline_limpieza import procesar_texto
 from .cliente import consultar_modelo
 import json
 from pathlib import Path
