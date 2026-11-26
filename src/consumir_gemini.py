@@ -10,9 +10,9 @@ import json
 
 load_dotenv()
 #constantes
-#MODELO = "gemini-flash-latest"
+MODELO = "gemini-3.5-flash-lite"
 
-MODELO = "gemini-3.6-flash"
+#MODELO = "gemini-3.6-flash"
 URL_BASE = "https://generativelanguage.googleapis.com/v1beta/models/"
 API_KEY = os.getenv("GEMINI_API_KEY")
 

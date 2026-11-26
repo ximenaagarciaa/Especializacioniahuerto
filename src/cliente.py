@@ -1,10 +1,10 @@
 import time
 import random
 from typing import Callable, Any
-from src.consumir_gemini import armar_peticion, extraer_texto, enviar_peticion
+from consumir_gemini import armar_peticion, extraer_texto, enviar_peticion
 #from src.consumir_gemini import enviar_peticion
 
-MODELO = "gemini-3.6-flash"
+MODELO = "gemini-3.5-flash-lite"
 
 def con_reintento(
     funcion: Callable[[], Any], 
@@ -45,7 +45,7 @@ def consultar_modelo(pregunta: str, system_instruction: str = "") -> str:
         raise RuntimeError(
             f"Se agotaron los intentos. Causa: {error}"
         ) from error
-    registrar_costo(respuesta)
+    #xgregistrar_costo(respuesta)
     return extraer_texto(respuesta)
 
 #if __name__ == "__main__":

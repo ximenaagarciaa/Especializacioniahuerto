@@ -1,0 +1,52 @@
+"""Revisión manual con la rúbrica del Bloque 17 (huerto con IA).
+
+Muestra: los 5 casos con F1 más bajo + los 5 con F1 más alto de
+resultados_metricas.json, más el caso 3 por contener cifras.
+IMPORTANTE: relee cada respuesta en resultados_metricas.json y ajusta
+las calificaciones con tu propio criterio antes de entregar.
+"""
+import json
+
+revision_manual = [
+    # --- 5 peores por F1 ---
+    {"id": 12, "consulta": "¿Qué debo hacer si encuentro hojas amarillas en una planta?",
+     "f1": 0.0, "correccion_factual": "no evaluable", "completitud": "no", "contradiccion": "no",
+     "nota": "Respuesta cortada a las 4 palabras ('Encontrar hojas amarillas en'). El F1 de 0.0 refleja una generación incompleta, no una respuesta mala."},
+    {"id": 15, "consulta": "¿Qué consecuencias puede tener un exceso de fertilización?",
+     "f1": 0.0, "correccion_factual": "no evaluable", "completitud": "no", "contradiccion": "no",
+     "nota": "Respuesta cortada a las 5 palabras ('El exceso de fertilización, a'). Mismo fallo que el caso 12."},
+    {"id": 16, "consulta": "¿Cómo mejorar un suelo muy compactado?",
+     "f1": 0.0, "correccion_factual": "no evaluable", "completitud": "no", "contradiccion": "no",
+     "nota": "Respuesta cortada a las 6 palabras ('...requiere'). Mismo fallo que el caso 12."},
+    {"id": 11, "consulta": "¿Cómo diferenciar un daño por plagas de una deficiencia nutricional?",
+     "f1": 0.022, "correccion_factual": "si", "completitud": "si", "contradiccion": "no",
+     "nota": "Coincide con la referencia (plagas = daño localizado/asimétrico; deficiencias = patrón sistemático de decoloración) y la amplía. F1 bajísimo porque tiene unos 530 tokens frente a 11 de la referencia."},
+    {"id": 5, "consulta": "¿Cómo puedo determinar si mis tomates necesitan riego?",
+     "f1": 0.024, "correccion_factual": "si", "completitud": "si", "contradiccion": "no",
+     "nota": "La 'prueba del dedo' a 3-5 cm equivale a la referencia (comprobar si el suelo está seco bajo la superficie). Verifica la profundidad con una fuente agronómica. F1 bajo por largo (~490 tokens)."},
+    # --- 5 mejores por F1 ---
+    {"id": 19, "consulta": "¿Qué bancales tienen cultivos actualmente?",
+     "f1": 0.071, "correccion_factual": "no evaluable", "completitud": "no", "contradiccion": "no",
+     "nota": "Cortada a mitad de frase ('¿A qué huerto, jardín'). Además la referencia es la del caso 17 (fecha de siembra), no corresponde a esta pregunta."},
+    {"id": 2, "consulta": "¿Cuándo es conveniente sembrar zapallo italiano en la zona central de Chile?",
+     "f1": 0.074, "correccion_factual": "si", "completitud": "si", "contradiccion": "no",
+     "nota": "Septiembre-noviembre y tras el riesgo de heladas: coincide con la referencia. Es de los 'mejores' F1 y aun así solo 0.074: ninguna respuesta larga supera 0.075."},
+    {"id": 20, "consulta": "¿Qué cultivos he cosechado durante el último mes?",
+     "f1": 0.075, "correccion_factual": "si", "completitud": "si", "contradiccion": "no",
+     "nota": "No inventa datos y dice que no tiene acceso al registro: comportamiento correcto sin RAG. Detalle: '¡lo recordamos!' sugiere una memoria que no tiene. La referencia es copia de la del caso 17."},
+    {"id": 18, "consulta": "¿Qué plagas he registrado en mis cultivos?",
+     "f1": 0.08, "correccion_factual": "si", "completitud": "si", "contradiccion": "no",
+     "nota": "Igual que el caso 20: pide los datos en vez de inventarlos. Referencia copiada del caso 17."},
+    {"id": 17, "consulta": "Según el historial, ¿cuándo sembré tomates?",
+     "f1": 0.102, "correccion_factual": "si", "completitud": "si", "contradiccion": "no",
+     "nota": "Dice que no tiene el historial y lo pide: equivale a la referencia ('no hay registros'). Es el F1 más alto del conjunto y sigue siendo solo 0.10."},
+    # --- caso adicional por contener cifras ---
+    {"id": 3, "consulta": "¿Qué temperatura favorece la germinación del pepino?",
+     "f1": 0.062, "correccion_factual": "parcialmente", "completitud": "si", "contradiccion": "no",
+     "nota": "Referencia: 25-30 °C. Respuesta: 20-30 °C con óptimo en 25 °C. Los rangos no coinciden del todo, pero la cobertura sale 1.0 porque todos los tokens de la referencia aparecen en la respuesta. Verifica el rango real con una fuente."},
+]
+
+if __name__ == "__main__":
+    with open("revision_manual.json", "w", encoding="utf-8") as archivo:
+        json.dump(revision_manual, archivo, indent=2, ensure_ascii=False)
+    print(f"revision_manual.json guardado con {len(revision_manual)} casos")
